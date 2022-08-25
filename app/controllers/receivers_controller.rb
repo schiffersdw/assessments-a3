@@ -25,7 +25,9 @@ class ReceiversController < ApplicationController
     
     # PUT /receivers/{_id}
     def update
-        unless @receiver.update(receiver_params)
+        if @receiver.update(receiver_params)
+            render json: @receiver, status: :ok
+        else
             render json: { errors: @receiver.errors.full_messages },
                     status: :unprocessable_entity
         end

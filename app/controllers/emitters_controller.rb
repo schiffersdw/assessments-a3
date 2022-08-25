@@ -26,7 +26,9 @@ class EmittersController < ApplicationController
     
     # PUT /emitters/{_id}
     def update
-        unless @emitter.update(emitter_params)
+        if @emitter.update(emitter_params)
+            render json: @emitter, status: :ok
+        else
             render json: { errors: @emitter.errors.full_messages },
                     status: :unprocessable_entity
         end

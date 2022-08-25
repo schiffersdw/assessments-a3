@@ -15,7 +15,13 @@ class InvoicesController < ApplicationController
 
     # POST /invoices
     def create
+    
         @invoice = Invoice.new(invoice_params)
+        
+        @invoice.set_uuid()
+        @invoice.set_stamp()
+        @invoice.user = @current_user
+
         if @invoice.save
             render json: @invoice, status: :created
         else
@@ -26,7 +32,10 @@ class InvoicesController < ApplicationController
 
     # PUT /invoices/{_uuid}
     def update
-        unless @invoice.update(invoice_params)
+        @invoice.set_stamp()
+        if @invoice.update(invoice_params)
+            render json: @invoice, status: :ok
+        else
             render json: { errors: @invoice.errors.full_messages },
                     status: :unprocessable_entity
         end
@@ -40,7 +49,7 @@ class InvoicesController < ApplicationController
     end
     
     def invoice_params
-        params.permit(:amount, :currency, :emitted_at, :expires_at, :signed_at, :cfdi_digital_stamp)
+        params.permit(:amount, :currency, :emitted_at, :expires_at, :signed_at, :receiver_id, :emitter_id)
     end
 
 end
