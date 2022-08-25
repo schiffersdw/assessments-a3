@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :emmiter do
+  factory :emitter do
     
   end
 end

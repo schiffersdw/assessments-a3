@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2022_08_25_041552) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "emmiters", force: :cascade do |t|
+  create_table "emitters", force: :cascade do |t|
     t.string "name", null: false
     t.string "rfc", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "active", default: true, null: false
-    t.index ["rfc"], name: "unique_emmiter_rfc", unique: true
+    t.index ["rfc"], name: "unique_emitter_rfc", unique: true
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_08_25_041552) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "receiver_id", null: false
-    t.bigint "emmiter_id", null: false
+    t.bigint "emitter_id", null: false
   end
 
   create_table "receivers", force: :cascade do |t|
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_08_25_041552) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "invoices", "emmiters", name: "emmiter_id_on_invoices"
+  add_foreign_key "invoices", "emitters", name: "emitter_id_on_invoices"
   add_foreign_key "invoices", "receivers", name: "receive_id_on_invoices"
   add_foreign_key "invoices", "users", name: "user_id_on_invoices"
 end

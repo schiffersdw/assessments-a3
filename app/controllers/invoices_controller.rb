@@ -4,7 +4,7 @@ class InvoicesController < ApplicationController
 
     # GET /invoices
      def index
-        @invoices = Invoice.eager_load(:emmiter, :receiver, :user).all
+        @invoices = Invoice.eager_load(:emitter, :receiver, :user).all
         render json: @invoices, status: :ok
     end
 

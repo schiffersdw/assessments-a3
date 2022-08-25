@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'auth#login'
 
   resources :users, param: :_username
-  resources :emmiters, param: :_id
+  resources :emitters, param: :_id
   resources :receivers , param: :_id
   resources :invoices , param: :_uuid
 

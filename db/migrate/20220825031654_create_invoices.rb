@@ -15,4 +15,4 @@ class CreateInvoices < ActiveRecord::Migration[6.1]
     add_foreign_key :invoices, :users, name: "user_id_on_invoices"
   end
 end
-:amount, :currency, :emitted_at, :expires_at, :signed_at, :cfdi_digital_stamp 
+
