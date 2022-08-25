@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>59590047-ebc8-4abc-a4e7-ec080672b4cd</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Linda Ferrer Roque</name>
+    <rfc>BNP7512128NX</rfc>
+  </emitter>
+  <receiver>
+    <name>Martín Saenz Arroyo</name>
+    <rfc>FJD190407H06</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">712364</cents>
+    <!-- ISO 4217 -->
+    <currency>DJF</currency>
+  </amount>
+  <emitted_at type="date">2020-11-19</emitted_at>
+  <expires_at type="date">2019-11-12</expires_at>
+  <signed_at type="date">2021-01-13</signed_at>
+  <cfdi_digital_stamp type="text">4iwtckpsf9d4gt5c069zzhyaymaw3h4o183m2gpyfu7ma2ic1iuwngovnks8lwtucgo3y7t09mz43l0dlybmc65jk5ui0lvg9ma132beqevoksz4yecd1819whth4xuw4lyt8impdyis3wdppr5yffsq81o0vrs3zpm2uefhwlfm4thr4pvpj4lc8s4hnp96x4tw5vik8bxyr122peapkoeb5jb59j1lkpai6mdlilzl4xwkbe0zea0wbzc386g</cfdi_digital_stamp>
+</hash>

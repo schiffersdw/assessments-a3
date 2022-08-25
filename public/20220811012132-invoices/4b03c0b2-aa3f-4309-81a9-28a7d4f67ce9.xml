@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>4b03c0b2-aa3f-4309-81a9-28a7d4f67ce9</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Rocío X Barajas</name>
+    <rfc>ÑZD84120945Y</rfc>
+  </emitter>
+  <receiver>
+    <name>Hugo Abrín Salas</name>
+    <rfc>QDM830310AQG</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">569861</cents>
+    <!-- ISO 4217 -->
+    <currency>PLN</currency>
+  </amount>
+  <emitted_at type="date">2020-03-29</emitted_at>
+  <expires_at type="date">2019-04-11</expires_at>
+  <signed_at type="date">2018-11-29</signed_at>
+  <cfdi_digital_stamp type="text">grrbkqhlst82wv56mxdldi0ucxute9a874lajdez8eotjybioufgkypwd64lxir06n1cd9ax0r2qcvy471mbl3qh2v7dy6m0ofudzlie7phq2ysvck2mwzuiuguxgy1iauurvho9zsloi28c02tukhp9y095l7vmilnqssljhqizx3mhlr0asemy7dpmzysq8c7v355k59y125uirnsidho4skexfm0tanpkfns8uw4fzrktafa0p7i8y3b6kmt</cfdi_digital_stamp>
+</hash>

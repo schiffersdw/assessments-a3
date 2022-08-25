@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>f9b50c04-4c74-4095-972c-3b20bcb6383c</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Emanuel Arenas Montes</name>
+    <rfc>VIO700313XTK</rfc>
+  </emitter>
+  <receiver>
+    <name>Kevin Baños Gavito</name>
+    <rfc>XPK800528D3T</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">161919</cents>
+    <!-- ISO 4217 -->
+    <currency>KWD</currency>
+  </amount>
+  <emitted_at type="date">2020-12-02</emitted_at>
+  <expires_at type="date">2018-11-22</expires_at>
+  <signed_at type="date">2021-03-22</signed_at>
+  <cfdi_digital_stamp type="text">9tgebv4t6w82wqfkfalii0i1zzgjju9auiyj0du8cgkfslkz42ryogms0j169s2lebjvsckekz0gyj57bfokz219kk7mxmsy8v1p9hprrmapdt8xbbncjm7ylwljaajds59100d1k3p55k8xgn41wdshj7k3ej8ishqxgz50b3bx4gw4we5y3xixje57dgatq0mxvtgv2mi718w7kprw9au0dhkydmvcspaxbmbjju7llsjoumhigoemb2zxs55</cfdi_digital_stamp>
+</hash>

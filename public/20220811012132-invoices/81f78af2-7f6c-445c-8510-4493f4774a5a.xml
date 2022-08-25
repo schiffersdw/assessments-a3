@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>81f78af2-7f6c-445c-8510-4493f4774a5a</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Aníbal Brambila Tamayo</name>
+    <rfc>KYM960714D46</rfc>
+  </emitter>
+  <receiver>
+    <name>Emiliano Quintero Izquierdo</name>
+    <rfc>PH&amp;090602PY9</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">34625</cents>
+    <!-- ISO 4217 -->
+    <currency>GYD</currency>
+  </amount>
+  <emitted_at type="date">2020-08-20</emitted_at>
+  <expires_at type="date">2018-07-02</expires_at>
+  <signed_at type="date">2022-01-08</signed_at>
+  <cfdi_digital_stamp type="text">2rwo8ze2q2x0g4r3qimyu3r6rzb1gp5ca9yaq66jrux8waa2ijxs6fr4eas00gawtbtzn32gkcxqe9tf6kb1n28wwn7jhtqnv34pjsy1u40vvk5u3m89vhz77m8q9eycp4yyuh0tni40qbtjqu4e94c88ae70jyzpyl2omkl5e3a521ozfx19hj0mmjgg21esy54z52q5qcd604mg30zpg7q1g9v0ldtcf8fqavn3w178cbz9ckays1mto3e3iq</cfdi_digital_stamp>
+</hash>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>91c1424f-87b3-4933-99e7-2fb3e24924e9</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Efraín Villa Ugalde</name>
+    <rfc>WXS05080645Z</rfc>
+  </emitter>
+  <receiver>
+    <name>Baltazar Lomelí Aguirre</name>
+    <rfc>IUL820730K5F</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">738874</cents>
+    <!-- ISO 4217 -->
+    <currency>LRD</currency>
+  </amount>
+  <emitted_at type="date">2018-11-29</emitted_at>
+  <expires_at type="date">2020-10-01</expires_at>
+  <signed_at type="date">2019-11-05</signed_at>
+  <cfdi_digital_stamp type="text">c44bt3t9fqytpq2c2ckzwhkkwycpn0o2u97993dwwq2cnflf16g50vnz19yg9l0lt3pwzdqw7t5a4hn9pttmky1dikgpffojd7maq00wyqikfvgrzth1buc78gxv2pdh5jklerhn7lfo2jg4b7s7cquxoa1xd6ft7ctn96krr4kmu6b4vafppjhum4cr9koff3ubd0fkojcqkxnavly9iluulwcentwpm4hl9mwe5zsgr7wu7r4ok2wgy1dsk36</cfdi_digital_stamp>
+</hash>

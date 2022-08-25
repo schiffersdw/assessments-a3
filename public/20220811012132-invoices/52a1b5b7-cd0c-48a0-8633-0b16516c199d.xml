@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>52a1b5b7-cd0c-48a0-8633-0b16516c199d</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Aurelio Mosco Iniesta</name>
+    <rfc>UKM010606ELZ</rfc>
+  </emitter>
+  <receiver>
+    <name>Herminio Zúñiga Loera</name>
+    <rfc>DIB02053089B</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">364937</cents>
+    <!-- ISO 4217 -->
+    <currency>KGS</currency>
+  </amount>
+  <emitted_at type="date">2022-03-20</emitted_at>
+  <expires_at type="date">2020-07-23</expires_at>
+  <signed_at type="date">2022-04-06</signed_at>
+  <cfdi_digital_stamp type="text">3m7xm5fvfb52ih63hr57ggq96cjh2hnt77jao6pw5b9e4jych149nm6e30lxz3plvuoachzd35o95vpbqskmutoym4aoinh1gjb68syf0i1gu9hbfvv1o51hebbitgx7ys9sx5ahpiw80dhvglplt4emyw8rptf3nbiijzru26fh6dpnt2m6pe11wsxqys7h1unkfkbq6iazek4dqihpaknndo7jwket10x9ov9v8a5q8c0t68yxzp02a2x8ton</cfdi_digital_stamp>
+</hash>

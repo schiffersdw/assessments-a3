@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>74678cbb-ee1c-43fc-86a3-03c2c92da51b</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Elías Nevárez Rosales</name>
+    <rfc>PBR161216L4A</rfc>
+  </emitter>
+  <receiver>
+    <name>Héctor Sandoval Bobadilla</name>
+    <rfc>XRZ930204JPV</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">197520</cents>
+    <!-- ISO 4217 -->
+    <currency>SYP</currency>
+  </amount>
+  <emitted_at type="date">2019-05-06</emitted_at>
+  <expires_at type="date">2019-11-09</expires_at>
+  <signed_at type="date">2021-01-24</signed_at>
+  <cfdi_digital_stamp type="text">1rom6yhevxn871ffdnjtiwpx3kva00iq8kdn5dcbm8nzsxs6y4xx0v3mh94evef3lecdwxyxyzkhvgywxi1lwzpbztkrhl8ccr3jh456l1ixbghi57rnid9q1dps5pka3ev1nqgagm1z4rmy73vnstskb7gxcvjjd6qum19jv6j7c1fxleqzfkt6u0ev5c2yk8u2a25utjisxpdu74ycz0hogarz5jc0x1sw9o3j9gbsc0n1ajat3ph91vk5654</cfdi_digital_stamp>
+</hash>

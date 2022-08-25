@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>743b4579-41ae-4872-bcf8-ad42684ccd8e</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Clara Revueltas Palomares</name>
+    <rfc>BDI051120B6Z</rfc>
+  </emitter>
+  <receiver>
+    <name>Joaquín Nevárez Hoyos</name>
+    <rfc>HYN130103CHD</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">245433</cents>
+    <!-- ISO 4217 -->
+    <currency>XDR</currency>
+  </amount>
+  <emitted_at type="date">2018-11-30</emitted_at>
+  <expires_at type="date">2019-09-16</expires_at>
+  <signed_at type="date">2019-07-19</signed_at>
+  <cfdi_digital_stamp type="text">p93cum9fc5z27xdhifp3aejqz9nisyuuadf3wpnedt9litltur7shx9qt8j7wsly4ds3wkkzgwo3n2pol2lytt79e6didu7g4keukpxa72xfse4xykk8blq78bkiwjowebcrgq8b9ng0ztnuo7mn6ev2chtdxde15uvau8i9y95hc9avn9galz3nck3v9p1pirw4ibtugq1lmofznuarq7po946umpfbt7rqoeq09da9vwx40qb0yp7wwnd0re4</cfdi_digital_stamp>
+</hash>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>de11dd5c-9d8a-44a1-992d-cd0924dfa8b8</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Simón Mercado Tinoco</name>
+    <rfc>DME9209286W4</rfc>
+  </emitter>
+  <receiver>
+    <name>Fabián Ibargüengoitia Simbrón</name>
+    <rfc>TZE060201FCA</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">555805</cents>
+    <!-- ISO 4217 -->
+    <currency>VND</currency>
+  </amount>
+  <emitted_at type="date">2021-10-21</emitted_at>
+  <expires_at type="date">2020-12-15</expires_at>
+  <signed_at type="date">2020-01-08</signed_at>
+  <cfdi_digital_stamp type="text">bb76048mnyfv4nm6jefzzcsnpcpfevgs9ea3tqi96qnb8u9pj23i3h4hxty1dcdzg20qpxf78s8f4c4e7j1oz6nk2asq4z1d6v07fgtgeeqyyk8ybwplpsf3gekyhpus41ohoc4nnekibkxnd55r1lnjyvaochzso5gbhhl2e2vmwjw0g8gm998b3bj5jnhi7v799wzlctteyz65hgw11pxxk9u83yqsokgv0dwy5f5couwr54q8vrb14fwfjz4</cfdi_digital_stamp>
+</hash>
