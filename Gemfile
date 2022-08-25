@@ -53,7 +53,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 #Gems for users and auth
-gem 'devise'
 gem 'jwt'
 gem 'bcrypt', '~> 3.1.7'
+
 
