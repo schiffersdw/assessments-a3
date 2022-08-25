@@ -2,8 +2,13 @@
 
 Rails.application.routes.draw do
 
-  resources :users, param: :_username
   post '/auth/login', to: 'auth#login'
+
+  resources :users, param: :_username
+  resources :emmiters, param: :_id
+  resources :receivers , param: :_id
+  resources :invoices , param: :_uuid
+
   get '/*a', to: 'application#not_found'
   
 end
