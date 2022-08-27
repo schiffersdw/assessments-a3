@@ -33,7 +33,16 @@ class UsersController < ApplicationController
                status: :unprocessable_entity
       end
     end
-  
+
+    # DELETE /users/{username}
+    def destroy
+      if @user.update({active: false})
+          render json: @user, status: :ok
+      else
+          render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
+      
     private
   
     def find_user

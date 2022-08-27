@@ -41,6 +41,15 @@ class InvoicesController < ApplicationController
         end
     end
 
+    # DELETE /invoices/{_uuid}
+    def destroy
+        if @invoice.update({active: false})
+            render json: @invoice, status: :ok
+        else
+            render json: { errors: @invoice.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
     private
     def find_invoice
         @invoice = Invoice.find_by_uuid!(params[:_uuid])

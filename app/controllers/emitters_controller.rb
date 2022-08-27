@@ -34,8 +34,16 @@ class EmittersController < ApplicationController
         end
     end
     
-    private
+    # DELETE /emmiters/{_id}
+    def destroy
+        if @emitter.update({active: false})
+            render json: @emitter, status: :ok
+        else
+            render json: { errors: @emitter.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
     
+    private
     def find_emitter
         @emitter = Emitter.find_by_id!(params[:_id])
         rescue ActiveRecord::RecordNotFound

@@ -1,5 +1,6 @@
 class ReceiversController < ApplicationController
     before_action :authorize_request
+    before_action :find_receiver, except: %i[create index]
 
     # GET /receivers
     def index
@@ -18,8 +19,16 @@ class ReceiversController < ApplicationController
         if @receiver.save
             render json: @receiver, status: :created
         else
-            render json: { errors: @receiver.errors.full_messages },
-                status: :unprocessable_entity
+            render json: { errors: @receiver.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
+    # DELETE /receivers/{_id}
+    def destroy
+        if @receiver.update({active: false})
+            render json: @receiver, status: :ok
+        else
+            render json: { errors: @receiver.errors.full_messages }, status: :unprocessable_entity
         end
     end
     
@@ -34,7 +43,6 @@ class ReceiversController < ApplicationController
     end
     
     private
-    
     def find_receiver
         @receiver = Receiver.find_by_id!(params[:_id])
         rescue ActiveRecord::RecordNotFound
