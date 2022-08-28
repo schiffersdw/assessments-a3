@@ -1,11 +1,9 @@
+# frozen_string_literal: true
+
 class Emitter < ApplicationRecord
+  scope :search_query, lambda { |param|
+    where('UPPER(name) LiKE ? ', "%#{param.upcase}%") if param
+  }
 
-    scope :search_query, lambda {|param| 
-        if param
-            where("UPPER(name) LiKE ? ",  "%#{param.upcase()}%")
-        end
-    }
-
-    scope :actives, lambda {where(:active => true)}
-
+  scope :actives, -> { where(active: true) }
 end

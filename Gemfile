@@ -52,15 +52,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-#Gems for users and auth
-gem 'jwt'
+# Gems for users and auth
 gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
-#Pagination 
+# Pagination
 gem 'will_paginate', '~> 3.3'
 
-
-#For ZIP Management
-gem 'rubyzip'
-gem 'nokogiri'
+# For ZIP Management
 gem 'money'
+gem 'nokogiri'
+gem 'rubyzip'
