@@ -56,4 +56,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'jwt'
 gem 'bcrypt', '~> 3.1.7'
 
+#Pagination 
+gem 'will_paginate', '~> 3.3'
 

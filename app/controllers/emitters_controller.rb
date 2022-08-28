@@ -4,8 +4,16 @@ class EmittersController < ApplicationController
 
     # GET /emitters
     def index
-        @emitters = Emitter.all
-        render json: @emitters, status: :ok
+        page = params[:page]
+        @emitters = Emitter.actives.search_query(params[:search]).page(page)
+  
+        render json: {
+            :total_pages => @emitters.total_pages,
+            :total_entries => @emitters.total_entries,
+            :current_page => @emitters.current_page,
+            :data => @emitters
+        },
+        status: :ok
     end
 
     # GET /emitters/{_id}

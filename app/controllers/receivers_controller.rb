@@ -4,8 +4,16 @@ class ReceiversController < ApplicationController
 
     # GET /receivers
     def index
-        @receivers = Receiver.all
-        render json: @receivers, status: :ok
+        page = params[:page]
+        @receivers = Receiver.actives.search_query(params[:search]).page(page)
+  
+        render json: {
+            :total_pages => @receivers.total_pages,
+            :total_entries => @receivers.total_entries,
+            :current_page => @receivers.current_page,
+            :data => @receivers
+        },
+        status: :ok
     end
 
     # GET /receivers/{_id}

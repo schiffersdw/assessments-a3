@@ -4,8 +4,32 @@ class InvoicesController < ApplicationController
 
     # GET /invoices
      def index
-        @invoices = Invoice.eager_load(:emitter, :receiver, :user).all
-        render json: @invoices, status: :ok
+        #Main queryset
+        page = params[:page]
+        @invoices = Invoice.eager_load(:emitter, :receiver, :user)
+
+        #Apply filters
+        @invoices = @invoices.with_status(params[:status])
+        .with_emmiter_id(params[:emitter_id])
+        .with_receiver_id(params[:receiver_id])
+        .with_emitted_at_range(params[:date_from], params[:date_to])
+        .with_amount_lte(params[:amount_from])
+        .with_amount_gte(params[:amount_to])
+
+        print("=====")
+        print(params[:emitter_id])
+
+        #Set pagination
+        @invoices = @invoices.page(page)
+
+        #Return render
+        render json: {
+            :total_pages => @invoices.total_pages,
+            :total_entries => @invoices.total_entries,
+            :current_page => @invoices.current_page,
+            :data => @invoices
+        },
+        status: :ok
     end
 
     # GET /invoices/{_uuid}

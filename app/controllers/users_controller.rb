@@ -4,8 +4,18 @@ class UsersController < ApplicationController
   
     # GET /users
     def index
-      @users = User.all
-      render json: @users, status: :ok
+
+      page = params[:page]
+      @users = User.actives.search_query(params[:search]).page(page)
+
+      render json: {
+          :total_pages => @users.total_pages,
+          :total_entries => @users.total_entries,
+          :current_page => @users.current_page,
+          :data => @users
+      },
+      status: :ok
+
     end
   
     # GET /users/{username}
