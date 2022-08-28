@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :users, param: :_username
   resources :emitters, param: :_id
   resources :receivers , param: :_id
-  resources :invoices , param: :_uuid
+  resources :invoices do
+    collection do
+      post :massive_upload
+    end
+  end
 
   get '/*a', to: 'application#not_found'
   

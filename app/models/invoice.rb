@@ -40,4 +40,26 @@ class Invoice < ApplicationRecord
     end
 
 
+    #Massive load of invoices
+    def self.import_from_zip(file)
+        errors = 0
+        completes = 0
+
+        result, files = ZipHelper::read(file)
+        if(!result)
+            return "Attach zip file with invoices", errors, completes
+        else
+            #Fetchs XML Results
+            for r in files
+                #Read xml
+                print(r)
+            end
+
+            #Retunr response
+            return "File processeded", errors, completes
+        end
+
+    end
+
+
 end

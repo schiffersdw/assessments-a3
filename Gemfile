@@ -59,3 +59,7 @@ gem 'bcrypt', '~> 3.1.7'
 #Pagination 
 gem 'will_paginate', '~> 3.3'
 
+
+#For ZIP Management
+gem 'rubyzip'
+

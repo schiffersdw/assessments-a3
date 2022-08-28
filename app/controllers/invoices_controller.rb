@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
     before_action :authorize_request
-    before_action :find_invoice, except: %i[create index]
+    before_action :find_invoice, except: %i[create index massive_upload]
 
     # GET /invoices
      def index
@@ -72,6 +72,23 @@ class InvoicesController < ApplicationController
             render json: @invoice, status: :ok
         else
             render json: { errors: @invoice.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
+    # POST /invoices/massive_upload
+    def massive_upload
+
+        if(params[:file].present?)
+
+            message, errors, completes = Invoice::import_from_zip(params[:file])
+
+            render json: {
+                :message => message,
+                :errors => errors,
+                :completes => completes
+            }, status: :ok
+        else
+            render json: { message: "Attach zip file with invoices" }, status: :unprocessable_entity
         end
     end
 
