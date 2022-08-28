@@ -15,9 +15,9 @@ class InvoicesController < ApplicationController
         .with_emitted_at_range(params[:date_from], params[:date_to])
         .with_amount_lte(params[:amount_from])
         .with_amount_gte(params[:amount_to])
-
-        print("=====")
-        print(params[:emitter_id])
+        
+        #Get total of selection
+        total = @invoices.total()
 
         #Set pagination
         @invoices = @invoices.page(page)
@@ -27,6 +27,7 @@ class InvoicesController < ApplicationController
             :total_pages => @invoices.total_pages,
             :total_entries => @invoices.total_entries,
             :current_page => @invoices.current_page,
+            :total => total,
             :data => @invoices
         },
         status: :ok

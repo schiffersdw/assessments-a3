@@ -25,7 +25,12 @@ class Invoice < ApplicationRecord
         where("invoices.amount < = ?", param) if param
     }
 
-    #Class methods
+    #Collection methods
+    def self.total()
+        self.sum(:amount)
+    end
+
+    #Object methods
     def set_uuid()
         self.uuid = SecureRandom.uuid
     end
@@ -33,5 +38,6 @@ class Invoice < ApplicationRecord
     def set_stamp()
         self.cfdi_digital_stamp = FFaker::DizzleIpsum.characters
     end
+
 
 end
