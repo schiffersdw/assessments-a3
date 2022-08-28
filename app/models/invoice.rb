@@ -41,8 +41,9 @@ class Invoice < ApplicationRecord
 
 
     #Massive load of invoices
-    def self.import_from_zip(file)
-        errors = 0
+    require "nokogiri"
+    def self.import_from_zip(file, current_user)
+        errors = []
         completes = 0
 
         result, files = ZipHelper::read(file)
@@ -52,7 +53,47 @@ class Invoice < ApplicationRecord
             #Fetchs XML Results
             for r in files
                 #Read xml
-                print(r)
+                xml = Nokogiri::XML(File.open(r))
+
+                #Create invoice object
+                invoice = Invoice.new
+                #Set valuess
+                invoice.uuid = xml.xpath("//invoice_uuid").inner_html
+                invoice.active = xml.xpath("//status").inner_html == "active"
+                invoice.currency = xml.xpath("//invoice_uuid").inner_html
+                invoice.emitted_at = xml.xpath("//emitted_at").inner_html
+                invoice.expires_at = xml.xpath("//expires_at").inner_html
+                invoice.signed_at = xml.xpath("//signed_at").inner_html
+                invoice.cfdi_digital_stamp = xml.xpath("//cfdi_digital_stamp").inner_html
+                invoice.user = current_user
+                #Get amounts
+                invoice.currency = xml.xpath("//amount/currency").inner_html
+                cents = xml.xpath("//amount/cents").inner_html
+
+                #Convert to amount
+                amount = Money.new(cents.to_i, invoice.currency)
+                invoice.amount = amount
+                
+                #Set dependencies
+                invoice.emitter = Emitter.find_or_create_by(
+                    :rfc => xml.xpath("//emitter/rfc").inner_html,
+                    :name => xml.xpath("//emitter/name").inner_html
+                )
+
+                invoice.receiver = Receiver.find_or_create_by(
+                    :rfc => xml.xpath("//receiver/rfc").inner_html,
+                    :name => xml.xpath("//receiver/name").inner_html
+                )
+                
+                #Save invoices
+                begin
+                    invoice.save
+                rescue Exception => e
+                    errors.push(e.message)
+                else
+                    completes += 1
+                end
+                
             end
 
             #Retunr response

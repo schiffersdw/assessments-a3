@@ -40,5 +40,6 @@ module TechTests
     config.api_only = true
     #Pagination config
     WillPaginate.per_page = 20
+    Money.use_i18n = false
   end
 end

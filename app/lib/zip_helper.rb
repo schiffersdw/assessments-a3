@@ -23,7 +23,7 @@ class ZipHelper
             end
             
             #Read contents into folder
-            files = Dir.entries(folder_dict).map{|entry| "#{folder_dict}/#{entry}"}
+            files = Dir.entries(folder_dict).map{|entry| "#{folder_dict}/#{entry}"}.select{|f| File.file?(f) }
             return true, files
         else
             return false, results

@@ -80,7 +80,7 @@ class InvoicesController < ApplicationController
 
         if(params[:file].present?)
 
-            message, errors, completes = Invoice::import_from_zip(params[:file])
+            message, errors, completes = Invoice::import_from_zip(params[:file], @current_user)
 
             render json: {
                 :message => message,

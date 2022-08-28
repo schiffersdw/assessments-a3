@@ -62,4 +62,5 @@ gem 'will_paginate', '~> 3.3'
 
 #For ZIP Management
 gem 'rubyzip'
-
+gem 'nokogiri'
+gem 'money'
