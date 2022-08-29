@@ -63,3 +63,6 @@ gem 'will_paginate', '~> 3.3'
 gem 'money'
 gem 'nokogiri'
 gem 'rubyzip'
+
+# QR Generator
+gem 'rqrcode'

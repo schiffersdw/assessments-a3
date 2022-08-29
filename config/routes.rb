@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :invoices, param: :_id do
     collection do
       post :massive_upload
+      get '/stamp_qr/:_id', to: 'invoices#stamp_qr', as: :stamp_qr
     end
   end
 

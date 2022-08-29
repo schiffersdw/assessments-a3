@@ -42,7 +42,6 @@ class Invoice < ApplicationRecord
   end
 
   # Massive load of invoices
-  require 'nokogiri'
   def self.import_from_zip(file, current_user)
     errors = []
     completes = 0

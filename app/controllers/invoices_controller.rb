@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InvoicesController < ApplicationController
-  before_action :authorize_request
+  before_action :authorize_request, except: %i[stamp_qr]
   before_action :find_invoice, except: %i[create index massive_upload]
 
   # GET /invoices
@@ -82,6 +82,21 @@ class InvoicesController < ApplicationController
     else
       render json: { message: 'Attach zip file with invoices' }, status: :unprocessable_entity
     end
+  end
+
+  # GET /invoices/{_uuid}/stamp_qr
+  def stamp_qr
+    # Create QR Code
+    qrcode = RQRCode::QRCode.new(@invoice.cfdi_digital_stamp)
+    png = qrcode.as_png(
+      bit_depth: 2,
+      border_modules: 1,
+      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+      size: 600
+    )
+    png_path = "storage/stamps/#{@invoice.id}.png"
+    File.binwrite(png_path, png.to_s)
+    send_file png_path, type: 'image/png', disposition: 'inline'
   end
 
   private
