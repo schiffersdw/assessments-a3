@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InvoicesController < ApplicationController
-  before_action :authorize_request, except: %i[stamp_qr]
+  before_action :authorize_request
   before_action :find_invoice, except: %i[create index massive_upload]
 
   # GET /invoices
@@ -24,7 +24,9 @@ class InvoicesController < ApplicationController
     @invoices = @invoices.page(params[:page])
 
     # Return render
-    render json: { total_pages: @invoices.total_pages, total_entries: @invoices.total_entries, current_page: @invoices.current_page, total:, data: @invoices }, status: :ok
+    render json: {
+      total_pages: @invoices.total_pages, total_entries: @invoices.total_entries, 
+      current_page: @invoices.current_page, total:, data: @invoices } , status: :ok
   end
 
   # GET /invoices/{_id}

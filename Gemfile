@@ -66,3 +66,6 @@ gem 'rubyzip'
 
 # QR Generator
 gem 'rqrcode'
+
+# Test controllers
+gem 'net-smtp'

@@ -75,6 +75,7 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     diff-lcs (1.5.0)
+    digest (3.1.0)
     docile (1.4.0)
     erubi (1.11.0)
     factory_bot (6.2.1)
@@ -88,6 +89,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    io-wait (0.2.1)
     json (2.6.2)
     jwt (2.4.1)
     listen (3.7.1)
@@ -105,9 +107,14 @@ GEM
     money (6.16.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.5.4)
+    net-protocol (0.1.2)
+      io-wait
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
     nio4r (2.5.8)
-    nokogiri (1.13.8-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
@@ -214,6 +221,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     thor (1.2.1)
+    timeout (0.2.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.2.0)
@@ -238,6 +246,7 @@ DEPENDENCIES
   jwt
   listen (~> 3.3)
   money
+  net-smtp
   nokogiri
   pg (~> 1.1)
   puma (~> 5.0)

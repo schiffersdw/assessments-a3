@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_08_27_203724) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "receiver_id", null: false
     t.bigint "emitter_id", null: false
+    t.index ["uuid"], name: "uuid", unique: true
   end
 
   create_table "receivers", force: :cascade do |t|

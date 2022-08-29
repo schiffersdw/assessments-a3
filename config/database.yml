@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: tech_tests_production
+  database: tech_tests_dev
   username: schiffer
   password: <%= ENV['TECH_TESTS_DATABASE_PASSWORD'] %>
 
@@ -60,6 +60,8 @@ development:
 test:
   <<: *default
   database: tech_tests_test
+  username: schiffer
+  password: <%= ENV['TECH_TESTS_DATABASE_PASSWORD'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
